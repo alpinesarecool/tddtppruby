@@ -1,8 +1,11 @@
-def word_wrap(word, counter)
-  return word if counter==0
-  if(word.length>counter && word.split(" ").count ==1)
-     return word.chars.each_slice(counter).map(&:join).join("\n")
+def word_wrap(text, counter)
+  return text if counter==0
+  words = text.split(" ")
+  result = ""
+  
+  words.each do |word|
+    result += word.chars.each_slice(counter).map(&:join).join("\n")+"\n"
   end
-
-  word.split(" ").join("\n")
+  
+  result.chomp
 end

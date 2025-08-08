@@ -21,4 +21,8 @@ RSpec.describe "#word_wrap" do
   it "returns by breaking the word into new line when the text has single word word's length is less than the counter" do
     expect(word_wrap("Helloworld", 6)).to eq("Hellow\norld")
   end
+
+  it "returns by breaking the word into new line with new words and when the word itsself is larger than  the counter further breaks it with new line" do
+    expect(word_wrap("I am hello world", 3)).to eq("I\nam\nhel\nlo\nwor\nld")
+  end
 end
