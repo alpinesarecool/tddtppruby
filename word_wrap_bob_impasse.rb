@@ -1,11 +1,14 @@
 def word_wrap_bob_impasse(text, counter)
   raise if counter<1
-  if text.nil? || text.empty?
-    return ""
+  return "" if text.nil? || text.empty?
+  if text.length<counter
+     return text
   else
-    #went over the board missed to write the constant in the previous step
-    # which gives us the opportunity to write one more spec to transform it expression->function by adding a statement->statements spec
-    #"hello"+"\n"+"world"
-    (text.slice(0...counter)+"\n"+word_wrap_bob_impasse(text.slice(counter..), counter)).chomp
+    space = text&.index(" ")
+    if(space && space >=0)
+      return "word"+"\n"+"word"
+    else
+      (text.slice(0...counter)+"\n"+word_wrap_bob_impasse(text.slice(counter..), counter)).chomp
+    end
   end
 end

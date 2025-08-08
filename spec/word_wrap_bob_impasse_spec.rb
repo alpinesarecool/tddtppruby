@@ -30,4 +30,8 @@ RSpec.describe "#word_wrap_bob_impasse" do
   it "breaks the very long word into multiple words" do
     expect(word_wrap_bob_impasse("helloworld",3)).to eq("hel\nlow\norl\nd")
   end
+  #This was the test above the caused the impasse
+  it "return 2 words each shorter than the counter" do
+    expect(word_wrap_bob_impasse("word word",6)).to eq("word\nword")
+  end
 end
