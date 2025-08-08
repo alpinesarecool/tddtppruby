@@ -1,3 +1,5 @@
 def word_wrap(word, counter)
-  word
+  return word if counter==0
+  
+  word.split(" ").join("\n")
 end

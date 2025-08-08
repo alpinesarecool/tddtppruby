@@ -9,4 +9,12 @@ RSpec.describe "#word_wrap" do
   it "returns entire text when counter is zero" do
     expect(word_wrap("Hello world", 0)).to eq("Hello world")
   end
+
+  it "returns entire text when counter is zero" do
+    expect(word_wrap("Hello world", 0)).to eq("Hello world")
+  end
+  
+  it "returns by breaking the word into new line when the text has multiple words and each word's length is less than the counter" do
+    expect(word_wrap("Hello world", 6)).to eq("Hello\nworld")
+  end
 end
