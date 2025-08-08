@@ -27,4 +27,7 @@ RSpec.describe "#word_wrap_bob_impasse" do
     expect(word_wrap_bob_impasse("helloworld",5)).to eq("hello\nworld")
     expect(word_wrap_bob_impasse("helloworld",6)).to eq("hellow\norld")
   end
+  it "breaks the very long word into multiple words" do
+    expect(word_wrap_bob_impasse("helloworld",3)).to eq("hel\nlow\norl\nd")
+  end
 end
