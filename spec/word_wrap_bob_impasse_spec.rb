@@ -33,5 +33,9 @@ RSpec.describe "#word_wrap_bob_impasse" do
   #This was the test above the caused the impasse
   it "return 2 words each shorter than the counter" do
     expect(word_wrap_bob_impasse("word word",6)).to eq("word\nword")
+    expect(word_wrap_bob_impasse("word wood",6)).to eq("word\nwood")
+  end
+  it "return 3 words each shorter than the counter" do
+    expect(word_wrap_bob_impasse("word word word",6)).to eq("word\nword\nword")
   end
 end

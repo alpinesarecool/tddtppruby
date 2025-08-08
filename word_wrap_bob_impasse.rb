@@ -6,9 +6,15 @@ def word_wrap_bob_impasse(text, counter)
   else
     space = text&.index(" ")
     if(space && space >=0)
-      return "word"+"\n"+"word"
+      break_between(text, space, space+1,counter)
     else
-      (text.slice(0...counter)+"\n"+word_wrap_bob_impasse(text.slice(counter..), counter)).chomp
+      break_between(text, counter, counter, counter).chomp
     end
   end
+end
+
+private
+
+def break_between(text, head, tail, counter)
+  return text.slice(0...head)+"\n"+word_wrap_bob_impasse(text.slice(tail..), counter)
 end
