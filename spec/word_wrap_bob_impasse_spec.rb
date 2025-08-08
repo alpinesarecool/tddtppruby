@@ -25,5 +25,6 @@ RSpec.describe "#word_wrap_bob_impasse" do
   end
   it "breaks the word at length when longer than counter" do
     expect(word_wrap_bob_impasse("helloworld",5)).to eq("hello\nworld")
+    expect(word_wrap_bob_impasse("helloworld",6)).to eq("hellow\norld")
   end
 end
