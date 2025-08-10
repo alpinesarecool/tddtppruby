@@ -38,4 +38,10 @@ RSpec.describe "#word_wrap_bob_impasse" do
   it "return 3 words each shorter than the counter" do
     expect(word_wrap_bob_impasse("word word word",6)).to eq("word\nword\nword")
   end
+  it "should break three words after the second with counter just over 2 words" do
+    expect(word_wrap_bob_impasse("word word word",9)).to eq("word word\nword")
+  end
+  it "when counter breaks wright at the space" do
+    expect(word_wrap_bob_impasse("word word word",6)).to eq("word\nword\nword")
+  end
 end

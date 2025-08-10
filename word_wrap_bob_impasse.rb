@@ -4,7 +4,8 @@ def word_wrap_bob_impasse(text, counter)
   if text.length<counter
      return text
   else
-    space = text&.index(" ")
+    space =   text.slice(0..counter).rindex(" ");
+
     if(space && space >=0)
       break_between(text, space, space+1,counter)
     else
